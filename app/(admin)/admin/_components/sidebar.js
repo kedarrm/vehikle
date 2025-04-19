@@ -37,7 +37,7 @@ const Sidebar = () => {
     return (
         <>
             {/* Desktop Sidebar */}
-            <div className="hidden md:flex h-full flex-col overflow-y-auto bg-white shadow-sm border-r fixed inset-y-0 w-56 z-50">
+            <div className="hidden md:flex h-full flex-col overflow-y-auto bg-white shadow-sm border-r fixed inset-y-0 top-[80px] w-56 z-50">
                 <div className="p-6">
                     <Link href="/admin">
                         <h1 className="text-xl font-bold">Vehiql Admin</h1>
