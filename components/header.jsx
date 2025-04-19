@@ -17,10 +17,18 @@ const Header = async ({ isAdminPage = false }) => {
       <nav className='mx-auto px-4 py-4 flex items-center justify-between'>
         <Link href={isAdminPage ? "/admin" : "/"} className='flex'>
           <Image
-            src={"/logo.png"} alt='Vehiql logo'
+            src={"/logosm.png"} 
+            alt="Welth Logo"
+            width={100}
+            height={50}
+            className="h-16 w-auto object-contain md:hidden" 
+          />
+          <Image
+            src={"/logo.png"}
+            alt="Welth Logo"
             width={200}
             height={60}
-            className='h-12 w-auto object-contain'
+            className="h-16 w-auto object-contain hidden md:inline" 
           />
           {isAdminPage && (
             <span className='text-xs font-extralight'>admin</span>
