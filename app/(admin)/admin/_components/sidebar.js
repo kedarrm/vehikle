@@ -1,7 +1,8 @@
 "use client"
 
 import { cn } from '@/lib/utils';
-import { Calendar, Car, Cog, LayoutDashboard } from 'lucide-react';
+import { SignOutButton } from '@clerk/nextjs';
+import { Calendar, Car, Cog, LayoutDashboard, LogOut } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -36,22 +37,38 @@ const Sidebar = () => {
     return (
         <>
             {/* Desktop Sidebar */}
-            <div className="hidden md:flex h-full flex-col overflow-y-auto bg-white shadow-sm border-r">
-                {routes.map((route) => {
-                    return (
+            <div className="hidden md:flex h-full flex-col overflow-y-auto bg-white shadow-sm border-r fixed inset-y-0 w-56 z-50">
+                <div className="p-6">
+                    <Link href="/admin">
+                        <h1 className="text-xl font-bold">Vehiql Admin</h1>
+                    </Link>
+                </div>
+                <div className="flex flex-col w-full">
+                    {routes.map((route) => (
                         <Link
-                            key={route.href} href={route.href}
-                            className={cn("flex items-center gap-x-2 text-slate-500 text-sm font-medium pl-6 transition-all hover:text-slate-600 hover:bg-slate-100/50 h-12",
+                            key={route.href}
+                            href={route.href}
+                            className={cn(
+                                "flex items-center gap-x-2 text-slate-500 text-sm font-medium pl-6 transition-all hover:text-slate-600 hover:bg-slate-100/50",
                                 pathname === route.href
                                     ? "text-blue-700 bg-blue-100/50 hover:bg-blue-100 hover:text-blue-700"
                                     : "",
+                                "h-12"
                             )}
                         >
-                            <route.icon className='h-5 w-5' />
+                            <route.icon className="h-5 w-5" />
                             {route.label}
                         </Link>
-                    )
-                })}
+                    ))}
+                </div>
+                <div className="mt-2 p-6">
+                    <SignOutButton>
+                        <button className="flex items-center gap-x-2 text-slate-500 text-sm font-medium transition-all hover:text-slate-600 cursor-pointer">
+                            <LogOut className="h-5 w-5" />
+                            Log out
+                        </button>
+                    </SignOutButton>
+                </div>
             </div>
 
             {/* Mobile Bottom Tabs */}
@@ -73,7 +90,7 @@ const Sidebar = () => {
                             )}
                         />
                         {route.label}
-                    </Link> 
+                    </Link>
                 ))}
             </div>
         </>

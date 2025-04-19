@@ -150,16 +150,16 @@ const CarsList = () => {
 
     return (
         <div className='space-y-4'>
-            <div className='flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between'>
+            <div className='flex flex-col sm:flex-row gap-4 w-full sm:justify-between sm:items-center'>
 
                 <Button
                     onClick={() => router.push("/admin/cars/create")}
-                    className="flex items-center cursor-pointer"
+                    className="flex items-center cursor-pointer z-10"
                 >
                     <Plus className='h-4 w-4' />Add Car
                 </Button>
 
-                <form onSubmit={handleSearchSubmit} className='flex w-full sm:w-auto'>
+                <form onSubmit={handleSearchSubmit} className='flex w-full sm:w-auto z-0'>
                     <div className='relative flex-1'>
                         <Search className='absolute left-2.5 top-2.5 h-4 w-4 text-gray-500' />
                         <Input
