@@ -1,7 +1,7 @@
 import { getAdmin } from '@/actions/admin'
 import Header from '@/components/header';
 import { notFound } from 'next/navigation';
-import React, { Children } from 'react'
+import React from 'react'
 import Sidebar from './_components/sidebar';
 
 const AdminLayout = async ({children}) => {

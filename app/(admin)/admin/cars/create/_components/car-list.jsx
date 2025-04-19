@@ -349,6 +349,7 @@ const CarsList = () => {
                             variant="outline"
                             onClick={() => setDeleteDialogOpen(false)}
                             disabled={deletingCar}
+                            className='cursor-pointer'
                         >
                             Cancel
                         </Button>
@@ -356,6 +357,7 @@ const CarsList = () => {
                             variant="destructive"
                             onClick={handleDeleteCar}
                             disabled={deletingCar}
+                            className='cursor-pointer'
                         >
                             {deletingCar ? (
                                 <>

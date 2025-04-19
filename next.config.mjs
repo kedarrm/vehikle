@@ -1,12 +1,12 @@
-import { Images } from 'lucide-react';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental : {
+    experimental: {
         serverComponentsHmrCache: false,
     },
 
-    images : {
+
+    images: {
         remotePatterns: [
             {
                 protocol: "https",
@@ -18,3 +18,5 @@ const nextConfig = {
 
 
 export default nextConfig;
+
+

@@ -632,6 +632,7 @@ const AddCarForm = () => {
                                                         setImagePreview(null);
                                                         setUploadedAiImage(null);
                                                     }}
+                                                    className='cursor-pointer'
                                                 >
                                                     Remove
                                                 </Button>
@@ -639,6 +640,7 @@ const AddCarForm = () => {
                                                     onClick={processWithAI}
                                                     disabled={processImageLoading}
                                                     size="sm"
+                                                    className='cursor-pointer'
                                                 >
                                                     {processImageLoading ? (
                                                         <>
@@ -666,7 +668,7 @@ const AddCarForm = () => {
                                                     Drag & drop or click to upload a car image
                                                 </span>
                                                 <span className="text-xs text-gray-500 mt-1">
-                                                    (JPG, PNG, WebP, max 5MB)
+                                                    (JPG, PNG, WEBP. (Max 1MB))
                                                 </span>
                                             </div>
                                         </div>

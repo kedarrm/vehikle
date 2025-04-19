@@ -1,4 +1,3 @@
-import { Description } from '@radix-ui/react-dialog'
 import React from 'react'
 import CarsList from './create/_components/car-list'
 
